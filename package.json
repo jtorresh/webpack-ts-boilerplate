@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist/*",
-    "build:prod": "yarn run clean && webpack --config webpack.config.prod.js --env.NODE_ENV='production'",
-    "serve:prod": "webpack-dev-server --config webpack.config.prod.js --port 3333 --env.NODE_ENV='production'",
-    "build:dev": "yarn run clean && webpack --config webpack.config.dev.js --env.NODE_ENV='development'",
-    "serve:dev": "webpack-dev-server --config webpack.config.dev.js --port 3333 --env.NODE_ENV='development'",
+    "build:prod": "yarn run clean && webpack --config webpack.config.prod.ts --env.NODE_ENV='production'",
+    "serve:prod": "webpack-dev-server --config webpack.config.prod.ts --port 3333 --env.NODE_ENV='production'",
+    "build:dev": "yarn run clean && webpack --config webpack.config.dev.ts --env.NODE_ENV='development'",
+    "serve:dev": "webpack-dev-server --config webpack.config.dev.ts --port 3333 --env.NODE_ENV='development'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -47,7 +47,7 @@
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "redux": "^4.0.0",
-    "react-redux": "5.0.7"
+    "react-redux": "5.0.7",
+    "redux": "^4.0.0"
   }
 }

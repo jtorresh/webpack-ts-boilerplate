@@ -1,5 +1,5 @@
-const merge = require ('webpack-merge');
-const common = require('./webpack.config.common');
+const mergeProd = require ('webpack-merge');
+const commonProd = require('./webpack.config.common.ts');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 
@@ -12,7 +12,7 @@ const optimiceCss = new OptimizeCssAssetsPlugin({
   assetNameRegExp: /\.css$/,
   cssProcessorOptions: { dissableComments: { removeAll: true }}
 })
-module.exports = merge(common, {
+module.exports = mergeProd(commonProd, {
   mode: 'production',
   optimization: {
     splitChunks: {

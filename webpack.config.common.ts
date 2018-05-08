@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -6,12 +7,16 @@ const extractText = new extractTextPlugin('css/[name].[hash].css');
 const htmlInject = new htmlWebpackPlugin({
   template: 'index.html'
 });
-module.exports = {
+
+
+module.exports  = {
   entry: {
     app: path.resolve(__dirname, './src/index.tsx'),
     vendor: [
       'react',
-      'react-dom'
+      'react-dom',
+      'redux',
+      'react-redux'
     ]
   },
   output: {

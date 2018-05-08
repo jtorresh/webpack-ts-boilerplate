@@ -3,3 +3,6 @@
 
 ## dependencies folders
 node_modules
+
+## build folder
+dist
