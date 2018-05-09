@@ -2,12 +2,18 @@ const path = require('path');
 const webpack = require('webpack');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 
 const extractText = new extractTextPlugin('css/[name].[hash].css');
 const htmlInject = new htmlWebpackPlugin({
   template: 'index.html'
 });
-
+const stylesPlugin = new StylelintWebpackPlugin({
+  configFile: '.stylelintrc',
+  emitErrors: true,
+  failOnError: true,
+  syntax: 'pcss'
+});
 
 module.exports  = {
   entry: {
@@ -26,16 +32,21 @@ module.exports  = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        loader: 'tslint-loader',
+        enforce: 'pre',
+        options: {
+          tsConfigFile: 'tsconfig.json',
+          emitErrors: true,
+          failOnHint: true
+        }
+      },
+      {
         test: /\.pcss$/,
         use: extractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'postcss-loader']
         }),
-      },
-      {
-        test: /\.jsx?$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
       },
       {
         test: /\.tsx?$/,
@@ -88,6 +99,7 @@ module.exports  = {
   },
   plugins: [
     extractText,
-    htmlInject
+    htmlInject,
+    stylesPlugin
   ]
 };
