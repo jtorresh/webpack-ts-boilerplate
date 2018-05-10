@@ -1,7 +1,52 @@
 body {
   font-family: 'Roboto', sans-serif;
+  margin: 3%;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
-h1 {
-  cursor: pointer;
+.home__title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.home__text {
+  text-decoration: underline;
+  font-size: 1.3rem;
+}
+
+.home__changed {
+  padding: 1%;
+  width: 17%;
+  background: var(--lightGrey);
+}
+
+.home__error {
+  display: block;
+  margin: 1% 0 1% 0;
+  color: var(--lightRed);
+  background: var(--lightGrey);
+  width: 15%;
+  padding: 1%;
+}
+
+.home__input {
+  width: 20%;
+  font-size: 1rem;
+  padding: 1%;
+  border: 1px solid var(--lightGrey);
+  &:focus {
+    outline: none;
+  }
+}
+
+.home__button {
+padding: 1.2%;
+margin-left: 2%;
+color: white;
+background-color: var(--lightBlue);
+border-radius: .5rem;
+&:focus {
+    outline: none;
+  }
 }
