@@ -11,15 +11,12 @@
     "jsx-space-before-trailing-slash": true,
     "jsx-self-close": true,
     "class-name": true,
-    "array-type": true,
     "curly": true,
     "whitespace": true,
     "typedef": true,
     "typedef-whitespace": true,
     "indent": true,
     "interface-name": true,
-    "linebreak-style": true,
-    "no-any": true,
-    "variable-name": true
+    "linebreak-style": true
   }
 }

@@ -1,0 +1,3 @@
+
+export const TEST_ACTION = '[test] TEST_ACTION';
+export const TEST_ACTION_WITHOUT_PAYLOAD = '[test] TEST_ACTION_WITHOUT_PAYLOAD';
