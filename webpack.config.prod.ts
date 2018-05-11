@@ -14,6 +14,9 @@ const optimiceCss = new OptimizeCssAssetsPlugin({
 })
 module.exports = mergeProd(commonProd, {
   mode: 'production',
+  performance: {
+    hints: false
+  },
   optimization: {
     splitChunks: {
       name: "vendor",

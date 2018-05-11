@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { HomeProps } from './IHomeProps';
 import { HomeState } from './IHomeState';
+import HomeComponent from '../../components/HomeComponent';
 
 class Home extends React.Component<HomeProps, HomeState> {
   state = {
@@ -10,10 +11,10 @@ class Home extends React.Component<HomeProps, HomeState> {
   }
   handleChange = (event: any): void => {
     event.preventDefault();
-      this.setState({
-        text: event.target.value,
-        
-      })
+    this.setState({
+      text: event.target.value,
+
+    })
 
   }
 
@@ -24,7 +25,7 @@ class Home extends React.Component<HomeProps, HomeState> {
         error: false
       })
       this.props.changeBool();
-    } else if(this.state.text === '') {
+    } else if (this.state.text === '') {
       this.setState({
         text: '',
         error: true
@@ -35,22 +36,14 @@ class Home extends React.Component<HomeProps, HomeState> {
   render(): JSX.Element {
     return (
       <React.Fragment>
-        <h1 className={"home__title"}>React boilerplate with postcss and typescript</h1>
-        <p className={"home__text"}>{this.props.text}</p>
-        {this.props.change && <p className={"home__changed"}>Boolean changed!</p>}
-        {this.state.error && <label className={"home__error"}>there is an error!</label>}
-        <input
-          type="text"
-          placeholder={"type here your value!"}
-          onChange={this.handleChange}
-          className={"home__input"}
+        <HomeComponent
+          text={this.props.text}
+          change={this.props.change}
+          error={this.state.error}
+          handleChange={this.handleChange}
+          handleClick={this.handleClick}
         />
-        <button
-          onClick={this.handleClick}
-          className={"home__button"}
-        >
-          change text
-        </button>
+        
       </React.Fragment>
     )
   }

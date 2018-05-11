@@ -18,9 +18,11 @@ const stylesPlugin = new StylelintWebpackPlugin({
 module.exports  = {
   entry: {
     app: path.resolve(__dirname, './src/index.tsx'),
-    vendor: [
+    react: [
       'react',
-      'react-dom',
+      'react-dom'
+    ],
+    redux: [
       'redux',
       'react-redux'
     ]

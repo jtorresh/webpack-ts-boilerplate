@@ -1,5 +1,5 @@
 interface IHomeState {
   text: string;
   error: boolean;
-} 
-export type HomeState = IHomeState
+}
+export type HomeState = IHomeState;
